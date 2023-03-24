@@ -3,10 +3,15 @@ import ReactFlow, { addEdge, Background, Connection, ConnectionMode, Controls, N
 import 'reactflow/dist/style.css'
 import {zinc} from 'tailwindcss/colors'
 
+import { DefaultEsge } from './edges/defultEdge'
 import { TestNode } from './nodes/input'
 
 const nodeTypes = {
     test: TestNode,
+}
+
+const edgeTypes = {
+    default: DefaultEsge,
 }
 
 const initialNodes = [
@@ -36,12 +41,14 @@ export function Whiteboard() {
         <div className='w-screen h-screen'>
             <ReactFlow
             nodeTypes={nodeTypes}
+            edgeTypes={edgeTypes}
             nodes={nodes}
             edges={edges}
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
             onConnect={onConnect}
             connectionMode={ConnectionMode.Loose}
+            defaultEdgeOptions={{type: "default"}}
             >
                 <Background
                 gap={20}
