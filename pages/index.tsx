@@ -1,3 +1,4 @@
+import { Whiteboard } from '@/components/whiteboard'
 import Head from 'next/head'
 import Link from 'next/link'
 
@@ -11,13 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='w-screen h-screen flex flex-col justify-center items-center gap-4'>
-        <h1 
-        className='font-bold text-3xl' 
-        >🚧 Em desenvolvimento 🚧</h1>
-        <Link 
-        href="/app" 
-        className='px-5 py-2 bg-zinc-900 text-white rounded-md' 
-        >ir para app</Link>
+        <Whiteboard/>
       </main>
     </>
   )
